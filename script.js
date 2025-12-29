@@ -6,9 +6,22 @@ function initContactForm() {
     contactForm.addEventListener('submit', function(event) {
       event.preventDefault();
 
-      contactForm.style.display = 'none';
-      feedback.classList.remove('hidden');
-    })
+      const btn = contactForm.querySelector('.submit-btn');
+      btn.textContent = 'Skickar...';
+
+      const serviceID = 'service_adhpula';
+      const templateID = 'template_cfr004h';
+      const publicKey = 'CA0PLqzCq8Q01nW_X';
+
+      emailjs.sendForm(serviceID, templateID, this, publicKey)
+        .then(() => {
+          contactForm.style.display = 'none';
+          feedback.classList.remove('hidden');
+        }, (error) => {
+          alert('Det gick inte att skicka: ' + JSON.stringify(error));
+          btn.textContent = 'Submit';
+        });
+    });
   }
 }
 
