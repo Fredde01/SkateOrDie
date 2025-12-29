@@ -26,8 +26,6 @@ function initContactForm() {
 }
 
 
-
-
 function loadHeader() {
     fetch('templates/fragments/header.html') 
         .then(response => {
@@ -44,3 +42,22 @@ window.addEventListener('DOMContentLoaded', () => {
   loadHeader();
   initContactForm();
 });
+
+
+
+function checkLogin() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const error = document.getElementById('error-msg');
+  
+  if (username === "admin" & password === "admin") {
+    localStorage.setItem("isLoggedIn", true);
+
+    // Just nu hänvisar lyckad-login till "index.html", detta skall ändras till rätt html sida när den skapas. 
+    window.location.href = "index.html"; 
+  } else {
+    error.innerText = "Wrong credentials, try again"
+  }
+}
+
+
