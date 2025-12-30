@@ -18,13 +18,79 @@
 	<body>
 		<div id="header-placeholder"></div>
 
-        <div class="login-admin">
-            <h2>Hello Admin, please login</h2>
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <p id="error-msg"></p>
-            <button onClick="checkLogin()">Login</button>
-        </div>
+<div id="logout-bar" class="hidden">
+  <button id="logout-btn">Logga ut</button>
+</div>
+
+		<div class="login-admin">
+			<h2>Hello Admin, please login</h2>
+			<input type="text" id="username" placeholder="Username" />
+			<input type="password" id="password" placeholder="Password" />
+			<p id="error-msg"></p>
+			<button onClick="checkLogin()">Login</button>
+		</div>
+
+		<!-- Adminpanel: huvudkategorier -->
+		<div id="category-admin" class="hidden admin-panel">
+			<h2>Hantera huvudkategorier</h2>
+			<p>Lägg till en ny huvudkategori som ska synas i navbaren.</p>
+
+			<div class="category-form">
+				<input type="text" id="new-category-name" placeholder="Ny huvudkategori" />
+				<button id="add-category-btn" type="button">Lägg till</button>
+			</div>
+
+			<h3>Befintliga extra huvudkategorier</h3>
+			<ul id="category-list"></ul>
+		</div>
+
+		<!-- Adminpanel: produkter -->
+		<div id="product-admin" class="hidden admin-panel">
+			<h2>Hantera produkter</h2>
+			<p>Lägg till en ny produkt i en befintlig kategori.</p>
+
+			<form id="product-form" class="product-form">
+				<label>
+					Kategori
+					<select id="product-category">
+						<option value="hoodies-sweaters">Hoodies &amp; Sweaters</option>
+						<option value="pants">Pants</option>
+						<option value="tshirts">T-shirts</option>
+						<option value="underwear">Underwear</option>
+						<option value="accessories">Accessories</option>
+						<option value="sneakers">Sneakers</option>
+						<option value="boots">Boots</option>
+						<option value="slippers">Slippers</option>
+						<option value="shoe-care">Shoe Care</option>
+						<option value="decks">Decks</option>
+						<option value="wheels">Wheels</option>
+						<option value="trucks">Trucks</option>
+						<option value="complete-boards">Complete Boards</option>
+						<optgroup id="dynamic-main-options" label="Nya huvudkategorier"></optgroup>
+					</select>
+				</label>
+
+				<label>
+					Produktnamn
+					<input type="text" id="product-name" placeholder="Produktnamn" />
+				</label>
+
+				<label>
+					Pris
+					<input type="text" id="product-price" placeholder="t.ex. 499 kr" />
+				</label>
+
+				<label>
+					Bild-URL
+					<input type="text" id="product-image" placeholder="t.ex. images/decks-1.jpg eller https://..." />
+				</label>
+
+				<button type="submit">Lägg till produkt</button>
+			</form>
+
+			<h3>Befintliga dynamiska produkter</h3>
+			<div id="product-list-admin"></div>
+		</div>
 
 		<script src="script.js"></script>
 	</body>
