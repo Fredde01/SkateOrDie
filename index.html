@@ -1,21 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="styles.css" />
-		<title>Skate or Die</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body>
-		<div id="header-placeholder"></div>
+    <title>Skate or Die</title>
 
-		<script src="script.js"></script>
-	</body>
+    <!-- Orbitron font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+    <!-- Gruppens styling -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Extra styling bara för frontpage -->
+    <link rel="stylesheet" href="frontpage.css" />
+</head>
+
+<body>
+
+    <!-- Navbar hämtas som innan -->
+    <div id="header-placeholder"></div>
+
+    <main class="frontpage">
+
+        <!-- LOGO / NAMN -->
+        <section class="front-hero">
+    <div class="front-logo-wrap">
+        <div class="front-logo-circle">
+            <div class="front-logo-inner">
+                S<span>O</span>D
+            </div>
+        </div>
+        <h1 class="front-title">Skate or Die</h1>
+        <p class="front-tagline">
+            New drops. Fresh decks. Street-ready fits.
+        </p>
+    </div>
+</section>
+
+
+
+        <!-- NEW ARRIVALS -->
+        <section class="front-section">
+
+            <div class="front-section-header">
+                <h2>New arrivals</h2>
+                <p>Senaste produkterna i shopen.</p>
+            </div>
+
+            <div class="front-products">
+
+                <a class="front-product" href="skate.html">
+                    <figure>
+                        <img src="images/decks-1.jpg" alt="Street Deck 8.0">
+                        <figcaption>
+                            <span class="front-product-name">Street Deck 8.0</span>
+                            <span class="front-product-meta">Decks · 599 kr</span>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a class="front-product" href="shoes.html">
+                    <figure>
+                        <img src="images/sneakers-1.jpg" alt="Skate Low Sneaker">
+                        <figcaption>
+                            <span class="front-product-name">Skate Low Sneaker</span>
+                            <span class="front-product-meta">Sneakers · 749 kr</span>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a class="front-product" href="clothes.html">
+                    <figure>
+                        <img src="images/hoodies-sweaters-1.jpg" alt="Raw Street Hoodie">
+                        <figcaption>
+                            <span class="front-product-name">Raw Street Hoodie</span>
+                            <span class="front-product-meta">Hoodies & Sweaters · 499 kr</span>
+                        </figcaption>
+                    </figure>
+                </a>
+
+                <a class="front-product" href="skate.html">
+                    <figure>
+                        <img src="images/trucks-1.jpg" alt="Street Trucks">
+                        <figcaption>
+                            <span class="front-product-name">Street Trucks</span>
+                            <span class="front-product-meta">Trucks · 499 kr</span>
+                        </figcaption>
+                    </figure>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Gruppens JS -->
+    <script src="script.js"></script>
+
+</body>
 </html>
