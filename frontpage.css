@@ -1,0 +1,109 @@
+/* ===== FRONT PAGE ONLY ===== */
+
+.frontpage{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 18px 56px;
+}
+
+/* HERO */
+.front-hero{
+    padding: 24px 0 8px;
+}
+
+.front-hero-text{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.front-logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    border: 2px solid rgba(255,255,255,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.front-title{
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    font-size: 32px;
+}
+
+.front-tagline{
+    margin: 6px 0 0 0;
+    opacity: .9;
+}
+
+
+/* SECTION TITLE */
+.front-section{
+    margin-top: 24px;
+}
+
+.front-section-header h2{
+    margin: 0 0 4px 0;
+}
+
+.front-section-header p{
+    margin: 0 0 16px 0;
+    opacity: .85;
+}
+
+
+/* PRODUCT GRID */
+.front-products{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+}
+
+.front-product{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.front-product figure{
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.05);
+    transition: .2s ease;
+}
+
+.front-product img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.front-product figcaption{
+    padding: 10px 12px 12px;
+}
+
+.front-product-name{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.front-product-meta{
+    font-size: 12px;
+    opacity: .85;
+}
+
+/* HOVER */
+.front-product:hover figure{
+    transform: scale(1.02) translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.45);
+    border-color: rgba(255,255,255,.45);
+}
