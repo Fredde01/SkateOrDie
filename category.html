@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Category | Skate or Die</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="subcategory.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="subcat-wrap">
+    <header class="subcat-header">
+      <h1 id="dynamic-category-title">Category</h1>
+      <p class="subcat-lead">Produkter för denna huvudkategori.</p>
+    </header>
+
+    <section class="product-grid" id="dynamic-category-grid"></section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('cat');
+
+      const titleEl = document.getElementById('dynamic-category-title');
+      if (slug && titleEl) {
+        titleEl.textContent = slug.charAt(0).toUpperCase() + slug.slice(1);
+      }
+
+      const grid = document.getElementById('dynamic-category-grid');
+      if (!grid || typeof getDynamicProducts !== 'function') return;
+
+      const all = getDynamicProducts();
+      const list = all[slug] || [];
+
+      list.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'product-card dynamic-product';
+        card.innerHTML = `
+          <img src="${p.image}" alt="${p.name}" loading="lazy">
+          <div class="product-body">
+            <h3 class="product-name">${p.name}</h3>
+            <div class="product-meta">
+              <span>In stock</span>
+              <span>${p.price}</span>
+            </div>
+            <a class="product-btn" href="#">View</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
